@@ -4,16 +4,16 @@ document.addEventListener("DOMContentLoaded", event=>{
 
     const db = firebase.firestore();
 
-    const myPost = db.collection('posts').doc('firstpost');
+    const myPost = db.collection('sharedmessages').doc('message');
 
     myPost.onSnapshot(doc =>{
         const data = doc.data();
-        document.querySelector('#title').innerHTML = data.title
+        document.querySelector('#title').innerHTML = data.payload
     })
 });
 
 function updatePost(e){
     const db = firebase.firestore();
-    const myPost = db.collection('posts').doc('firstpost');
-    myPost.update({title: e.target.value })
+    const myPost = db.collection('sharedmessages').doc('message');
+    myPost.update({payload: e.target.value })
 }
