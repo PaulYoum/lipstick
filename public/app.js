@@ -28,12 +28,12 @@ function updatePost(e){
 function sendForward(){
   const db = firebase.firestore();
   const outValues = db.collection('sharedmessages').doc('message');
-  outValues.update({outData: 'Forward' })
+  outValues.update({outData: 'start' })
 }
 
 function sendStop(){
   const db = firebase.firestore();
   const outValues = db.collection('sharedmessages').doc('message');
-  outValues.update({outData: 'Stop' })
+  outValues.update({outData: 'stp' })
 }
 

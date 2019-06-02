@@ -2,9 +2,7 @@
 <html>
   <head>
     
-    <!--
     <link rel="stylesheet" href="output.css">
-    -->
     
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
@@ -26,18 +24,51 @@
   </head>
   <body>
 
-    <button class="waves-effect waves-light btn" onclick="sendForward()">
-      <span>Forward</span>
-    </button>
+  <div class="col s12 m7">
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="https://media.giphy.com/media/Y1ggBG6wpBdwA/giphy.gif" width=200 height=200 />
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
 
-    <button class="waves-effect waves-light btn" onclick="sendStop()">
-      <span>Stop</span>
-    </button>
-    
-    <h1 id="title"></h1>
-    <input onchange="updatePost(event)">
-    
-    
+          <p>Car Controls</p>
+          <br />
+        <button class="waves-effect waves-light btn" onclick="sendForward()">
+          <span>Forward</span>
+        </button>
+
+        <button class="waves-effect waves-light btn" onclick="sendStop()">
+          <span>Stop</span>
+        </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 m7">
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="https://media1.giphy.com/media/szLOGdR0gaUMg/giphy.gif" height=200 widght=200 />
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+
+          <p>Temperature Readout</p>
+          <br />
+        <button class="waves-effect waves-light btn" onclick="sendForward()">
+          <span>Forward</span>
+        </button>
+
+        <button class="waves-effect waves-light btn" onclick="sendStop()">
+          <span>Stop</span>
+        </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
     <h1 id="mockValue"/>
     
     <!-- Compiled and minified JavaScript -->
