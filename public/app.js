@@ -4,6 +4,12 @@ document.addEventListener("DOMContentLoaded", event=>{
 
     const db = firebase.firestore();
 
+    const tempValues = db.collection('sharedmessages').doc('temperature');
+    tempValues.onSnapshot(doc => {
+      const temp = doc.data();
+      document.querySelector('#tempReadOut').innerHTML = temp.current + "&#176;"; 
+    });
+
     const outValues = db.collection('sharedmessages').doc('message');
 
     outValues.onSnapshot(doc =>{
