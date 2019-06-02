@@ -10,26 +10,8 @@ document.addEventListener("DOMContentLoaded", event=>{
       document.querySelector('#tempReadOut').innerHTML = temp.current + "&#176;"; 
     });
 
-    const outValues = db.collection('sharedmessages').doc('message');
-
-    outValues.onSnapshot(doc =>{
-        const data = doc.data();
-        document.querySelector('#title').innerHTML = data.outData;
-    });
-
-    const inValue = db.collection('sharedmessages').doc('inMessage');
-
-    inValue.onSnapshot(doc =>{
-        const receive = doc.data();
-        document.querySelector('#mockValue').innerHTML = receive.inData;
-    });
 });
 
-function updatePost(e){
-    const db = firebase.firestore();
-    const outValues = db.collection('sharedmessages').doc('message');
-    outValues.update({outData: e.target.value })
-}
 
 function sendForward(){
   const db = firebase.firestore();
