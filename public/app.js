@@ -37,3 +37,10 @@ function sendStop(){
   outValues.update({outData: 'stp' })
 }
 
+function requestTemp(){
+  const db = firebase.firestore();
+  const outValues = db.collection('sharedmessages').doc('requesttemp');
+  outValues.update({isrequesting: 'readtemp' })
+}
+
+
