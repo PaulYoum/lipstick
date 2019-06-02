@@ -4,16 +4,36 @@ document.addEventListener("DOMContentLoaded", event=>{
 
     const db = firebase.firestore();
 
-    const myPost = db.collection('sharedmessages').doc('message');
+    const outValues = db.collection('sharedmessages').doc('message');
 
-    myPost.onSnapshot(doc =>{
+    outValues.onSnapshot(doc =>{
         const data = doc.data();
-        document.querySelector('#title').innerHTML = data.payload
-    })
+        document.querySelector('#title').innerHTML = data.outData;
+    });
+
+    const inValue = db.collection('sharedmessages').doc('inMessage');
+
+    inValue.onSnapshot(doc =>{
+        const receive = doc.data();
+        document.querySelector('#mockValue').innerHTML = receive.inData;
+    });
 });
 
 function updatePost(e){
     const db = firebase.firestore();
-    const myPost = db.collection('sharedmessages').doc('message');
-    myPost.update({payload: e.target.value })
+    const outValues = db.collection('sharedmessages').doc('message');
+    outValues.update({outData: e.target.value })
 }
+
+function sendForward(){
+  const db = firebase.firestore();
+  const outValues = db.collection('sharedmessages').doc('message');
+  outValues.update({outData: 'Forward' })
+}
+
+function sendStop(){
+  const db = firebase.firestore();
+  const outValues = db.collection('sharedmessages').doc('message');
+  outValues.update({outData: 'Stop' })
+}
+

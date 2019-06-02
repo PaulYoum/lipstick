@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
+    <!--
+    <link rel="stylesheet" href="output.css">
+    -->
+    
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
+   
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Welcome to our Faabulous app</title>
@@ -18,12 +26,26 @@
   </head>
   <body>
 
+    <button class="waves-effect waves-light btn" onclick="sendForward()">
+      <span>Forward</span>
+    </button>
+
+    <button class="waves-effect waves-light btn" onclick="sendStop()">
+      <span>Stop</span>
+    </button>
+    
     <h1 id="title"></h1>
     <input onchange="updatePost(event)">
-
-
+    
+    
+    <h1 id="mockValue"/>
+    
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
     <script src="app.js">
       
     </script>
     </body>
+
 </html>
